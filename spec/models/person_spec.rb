@@ -21,8 +21,6 @@ describe Person do
 
   describe ".with_employees" do
     it "finds people who manage employees" do
-      pending "Fix this spec second"
-
       managers = [
         create(:person, name: "manager-one"),
         create(:person, name: "manager-two")

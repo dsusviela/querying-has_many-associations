@@ -8,8 +8,12 @@ class Person < ActiveRecord::Base
     joins(:location).order('locations.name')
   end
 
+  def self.manager_ids
+    joins(:manager).select(:manager_id).distinct
+  end
+
   def self.with_employees
-    all
+    where(id: Person.manager_ids)
   end
 
   def self.with_employees_order_by_location_name
