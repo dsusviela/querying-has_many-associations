@@ -5,7 +5,7 @@ class Person < ActiveRecord::Base
   has_many :employees, class_name: "Person", foreign_key: :manager_id
 
   def self.order_by_location_name
-    all
+    joins(:location).order('locations.name')
   end
 
   def self.with_employees

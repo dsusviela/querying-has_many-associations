@@ -3,8 +3,6 @@ require "spec_helper"
 describe Person do
   describe ".order_by_location_name" do
     it "groups people by location" do
-      pending "Fix this spec first"
-
       locations = [
         create(:location, name: "location1"),
         create(:location, name: "location3"),
