@@ -39,8 +39,6 @@ describe Person do
 
   describe ".with_employees_order_by_location_name" do
     it "finds managers ordered by location name" do
-      pending "Fix this spec last"
-
       locations = [
         create(:location, name: "location1"),
         create(:location, name: "location3"),

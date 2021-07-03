@@ -17,6 +17,6 @@ class Person < ActiveRecord::Base
   end
 
   def self.with_employees_order_by_location_name
-    all
+    from(Person.with_employees, :people).joins(:location).merge(Location.ordered_by_name)
   end
 end
